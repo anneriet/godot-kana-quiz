@@ -1,0 +1,121 @@
+[gd_resource type="Theme" load_steps=9 format=3 uid="uid://grgolg3pj1lr"]
+
+[ext_resource type="FontFile" uid="uid://d38dpm3udfesu" path="res://fonts/ubuntu/Ubuntu-L.ttf" id="1_3ebgr"]
+[ext_resource type="Texture2D" uid="uid://c8nj3hdp2ik7l" path="res://art/checkbox-checked-svgrepo-com.svg" id="1_dgl32"]
+[ext_resource type="Texture2D" uid="uid://c612kg86ghjae" path="res://art/checkbox-unchecked-svgrepo-com.svg" id="2_jleob"]
+[ext_resource type="StyleBox" uid="uid://bm0wy5f6gjp44" path="res://styles/line_edit_box.tres" id="5_tnmc4"]
+[ext_resource type="FontFile" uid="uid://dxw7afxo4dlc4" path="res://fonts/ubuntu/Ubuntu-R.ttf" id="6_edpn4"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_wcp5v"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_cupxl"]
+content_margin_left = 4.0
+content_margin_top = 4.0
+content_margin_right = 4.0
+content_margin_bottom = 4.0
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_8c80g"]
+content_margin_left = 4.0
+content_margin_top = 4.0
+content_margin_right = 4.0
+content_margin_bottom = 4.0
+bg_color = Color(1, 1, 1, 0.75)
+draw_center = false
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+corner_radius_top_left = 3
+corner_radius_top_right = 3
+corner_radius_bottom_right = 3
+corner_radius_bottom_left = 3
+corner_detail = 5
+expand_margin_left = 2.0
+expand_margin_top = 2.0
+expand_margin_right = 2.0
+expand_margin_bottom = 2.0
+
+[resource]
+default_font = ExtResource("6_edpn4")
+default_font_size = 100
+Button/colors/font_color = Color(1, 1, 1, 1)
+Button/colors/font_disabled_color = Color(0.219501, 0.219501, 0.219501, 1)
+Button/colors/font_focus_color = Color(0.843184, 0.843184, 0.843184, 1)
+Button/colors/font_hover_color = Color(0.942823, 0.942823, 0.942823, 1)
+Button/colors/font_hover_pressed_color = Color(1, 1, 1, 1)
+Button/colors/font_outline_color = Color(0, 0, 0, 1)
+Button/colors/font_pressed_color = Color(1, 1, 1, 1)
+Button/colors/icon_disabled_color = Color(0, 0, 0, 1)
+Button/colors/icon_focus_color = Color(0, 0, 0, 1)
+Button/colors/icon_hover_color = Color(0, 0, 0, 1)
+Button/colors/icon_hover_pressed_color = Color(0, 0, 0, 1)
+Button/colors/icon_normal_color = Color(0, 0, 0, 1)
+Button/colors/icon_pressed_color = Color(0, 0, 0, 1)
+Button/constants/align_to_largest_stylebox = 0
+Button/constants/h_separation = 0
+Button/constants/icon_max_width = 0
+Button/constants/outline_size = 0
+Button/font_sizes/font_size = 100
+Button/fonts/font = ExtResource("6_edpn4")
+Button/styles/disabled = null
+Button/styles/focus = SubResource("StyleBoxEmpty_wcp5v")
+Button/styles/hover = null
+Button/styles/normal = null
+Button/styles/pressed = null
+CheckBox/colors/font_color = Color(0.875, 0.875, 0.875, 1)
+CheckBox/colors/font_disabled_color = Color(0.875, 0.875, 0.875, 0.5)
+CheckBox/colors/font_focus_color = Color(0.95, 0.95, 0.95, 1)
+CheckBox/colors/font_hover_color = Color(0.95, 0.95, 0.95, 1)
+CheckBox/colors/font_hover_pressed_color = Color(1, 1, 1, 1)
+CheckBox/colors/font_outline_color = Color(0, 0, 0, 1)
+CheckBox/colors/font_pressed_color = Color(1, 1, 1, 1)
+CheckBox/icons/checked = ExtResource("1_dgl32")
+CheckBox/icons/checked_disabled = null
+CheckBox/icons/radio_checked = null
+CheckBox/icons/radio_checked_disabled = null
+CheckBox/icons/radio_unchecked = null
+CheckBox/icons/radio_unchecked_disabled = null
+CheckBox/icons/unchecked = ExtResource("2_jleob")
+CheckBox/icons/unchecked_disabled = null
+CheckBox/styles/disabled = SubResource("StyleBoxEmpty_cupxl")
+CheckBox/styles/focus = SubResource("StyleBoxFlat_8c80g")
+CheckBox/styles/hover = SubResource("StyleBoxEmpty_cupxl")
+CheckBox/styles/hover_pressed = SubResource("StyleBoxEmpty_cupxl")
+CheckBox/styles/normal = SubResource("StyleBoxEmpty_cupxl")
+CheckBox/styles/pressed = SubResource("StyleBoxEmpty_cupxl")
+Fonts/fonts/large = ExtResource("1_3ebgr")
+Fonts/fonts/normal = ExtResource("1_3ebgr")
+Label/colors/font_color = Color(0, 0, 0, 1)
+Label/colors/font_outline_color = Color(0, 0, 0, 1)
+Label/colors/font_shadow_color = Color(0, 0, 0, 1)
+Label/constants/line_spacing = 0
+Label/constants/outline_size = 0
+Label/constants/shadow_offset_x = 0
+Label/constants/shadow_offset_y = 0
+Label/constants/shadow_outline_size = 0
+Label/font_sizes/font_size = 100
+Label/fonts/font = ExtResource("6_edpn4")
+Label/styles/normal = null
+LineEdit/colors/caret_color = Color(0, 0, 0, 1)
+LineEdit/colors/clear_button_color = Color(0, 0, 0, 1)
+LineEdit/colors/clear_button_color_pressed = Color(0, 0, 0, 1)
+LineEdit/colors/font_color = Color(0, 0, 0, 1)
+LineEdit/colors/font_outline_color = Color(0, 0, 0, 1)
+LineEdit/colors/font_placeholder_color = Color(0.552941, 0.552941, 0.552941, 1)
+LineEdit/colors/font_selected_color = Color(1, 1, 1, 1)
+LineEdit/colors/font_uneditable_color = Color(0.309804, 0.309804, 0.309804, 1)
+LineEdit/colors/selection_color = Color(0.0848148, 0.169213, 0.271628, 1)
+LineEdit/constants/caret_width = 4
+LineEdit/constants/minimum_character_width = 0
+LineEdit/constants/outline_size = 0
+LineEdit/font_sizes/font_size = 100
+LineEdit/fonts/font = ExtResource("6_edpn4")
+LineEdit/icons/clear = null
+LineEdit/styles/focus = ExtResource("5_tnmc4")
+LineEdit/styles/normal = ExtResource("5_tnmc4")
+LineEdit/styles/read_only = null
+MarginContainer/constants/margin_bottom = 25
+MarginContainer/constants/margin_left = 25
+MarginContainer/constants/margin_right = 25
+MarginContainer/constants/margin_top = 100
+VBoxContainer/constants/separation = 30

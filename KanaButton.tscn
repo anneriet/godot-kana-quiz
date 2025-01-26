@@ -1,0 +1,71 @@
+[gd_scene load_steps=5 format=3 uid="uid://bjidxebcrxqtd"]
+
+[ext_resource type="Theme" uid="uid://dk3p5rogt76te" path="res://styles/kana_button_theme.tres" id="1_yr4ol"]
+[ext_resource type="Script" path="res://scripts/kanaButton.gd" id="2_sukfv"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_tiuer"]
+bg_color = Color(0, 0, 0, 0.698039)
+corner_radius_top_left = 20
+corner_radius_top_right = 20
+corner_radius_bottom_right = 20
+corner_radius_bottom_left = 20
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_h8m4r"]
+bg_color = Color(0, 0.619608, 0, 1)
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 20
+corner_radius_bottom_left = 20
+
+[node name="Button" type="Button" groups=["Persist"]]
+clip_children = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 3
+mouse_filter = 1
+theme = ExtResource("1_yr4ol")
+toggle_mode = true
+script = ExtResource("2_sukfv")
+
+[node name="Label" type="RichTextLabel" parent="."]
+z_index = 1
+clip_contents = false
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -50.0
+offset_top = -66.0
+offset_right = 50.0
+offset_bottom = 66.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 1
+theme = ExtResource("1_yr4ol")
+bbcode_enabled = true
+text = "あ"
+fit_content = true
+autowrap_mode = 0
+visible_characters_behavior = 1
+
+[node name="ProgressBar" type="ProgressBar" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+mouse_force_pass_scroll_events = false
+theme_override_styles/background = SubResource("StyleBoxFlat_tiuer")
+theme_override_styles/fill = SubResource("StyleBoxFlat_h8m4r")
+max_value = 1.0
+fill_mode = 3
+show_percentage = false
+
+[connection signal="item_rect_changed" from="." to="." method="_on_item_rect_changed"]

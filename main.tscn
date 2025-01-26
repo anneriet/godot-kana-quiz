@@ -1,0 +1,296 @@
+[gd_scene load_steps=21 format=3 uid="uid://chmy1qovl3pql"]
+
+[ext_resource type="Script" path="res://scripts/quiz.gd" id="1_utqa5"]
+[ext_resource type="Theme" uid="uid://grgolg3pj1lr" path="res://styles/text_theme.tres" id="1_wkbtn"]
+[ext_resource type="Script" path="res://scripts/AntiCloseLineEdit.gd" id="3_3d503"]
+[ext_resource type="Texture2D" uid="uid://dmlw2l8rmpd0h" path="res://art/toggle-on-3-svgrepo-com.png" id="3_gmngo"]
+[ext_resource type="StyleBox" uid="uid://bhagt05pcmenw" path="res://styles/button_style_box_flat.tres" id="3_v8beg"]
+[ext_resource type="Texture2D" uid="uid://ca5lh8np8snnq" path="res://art/toggle-off-3-svgrepo-com.png" id="4_bwvyk"]
+[ext_resource type="Theme" uid="uid://dnxo8agiwkga8" path="res://styles/title_theme.tres" id="5_k57a6"]
+[ext_resource type="Script" path="res://scripts/AntiCloseButton.gd" id="5_xq74t"]
+[ext_resource type="StyleBox" uid="uid://cegobb0j4e1vw" path="res://styles/title_button_style.tres" id="6_4b03e"]
+[ext_resource type="StyleBox" uid="uid://dgcedwrgwjjd7" path="res://styles/button_style_box_hover.tres" id="6_of067"]
+[ext_resource type="Theme" uid="uid://dk3p5rogt76te" path="res://styles/kana_button_theme.tres" id="7_6chpx"]
+[ext_resource type="Texture2D" uid="uid://b7b7m3hy1b0mf" path="res://art/toggle-on_disabled.png" id="12_1ga28"]
+[ext_resource type="Texture2D" uid="uid://bbntll7m57234" path="res://art/toggle-off-disabled.png" id="13_gpcft"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_qaorj"]
+bg_color = Color(0, 0.345098, 0.184314, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_sjks2"]
+content_margin_bottom = 3.0
+bg_color = Color(0.843184, 0.843184, 0.843184, 1)
+border_width_left = 12
+border_width_top = 12
+border_width_right = 12
+border_width_bottom = 12
+border_color = Color(0.282353, 0.458824, 0.67451, 1)
+corner_radius_top_left = 50
+corner_radius_top_right = 50
+corner_radius_bottom_right = 50
+corner_radius_bottom_left = 50
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_u5xeg"]
+content_margin_bottom = 3.0
+bg_color = Color(0.843184, 0.843184, 0.843184, 1)
+border_width_left = 12
+border_width_top = 12
+border_width_right = 12
+border_width_bottom = 12
+border_color = Color(0.168627, 0.301961, 0.462745, 1)
+corner_radius_top_left = 50
+corner_radius_top_right = 50
+corner_radius_bottom_right = 50
+corner_radius_bottom_left = 50
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_kxkpw"]
+content_margin_bottom = 3.0
+bg_color = Color(0.843184, 0.843184, 0.843184, 1)
+border_width_left = 12
+border_width_top = 12
+border_width_right = 12
+border_width_bottom = 12
+border_color = Color(0.168627, 0.301961, 0.462745, 1)
+corner_radius_top_left = 50
+corner_radius_top_right = 50
+corner_radius_bottom_right = 50
+corner_radius_bottom_left = 50
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_6ttua"]
+content_margin_bottom = 5.0
+bg_color = Color(1, 1, 1, 0.247059)
+corner_radius_top_left = 20
+corner_radius_top_right = 20
+corner_radius_bottom_right = 20
+corner_radius_bottom_left = 20
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_mciwh"]
+content_margin_bottom = 5.0
+bg_color = Color(1, 1, 1, 0.603922)
+corner_radius_top_left = 20
+corner_radius_top_right = 20
+corner_radius_bottom_right = 20
+corner_radius_bottom_left = 20
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_7w31y"]
+
+[node name="Quiz" type="Node" groups=["Persist"]]
+script = ExtResource("1_utqa5")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+custom_minimum_size = Vector2(100, 100)
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.717647, 0.862745, 0.996078, 1)
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 4
+size_flags_vertical = 6
+theme = ExtResource("1_wkbtn")
+
+[node name="VBoxContainerQuiz" type="VBoxContainer" parent="MarginContainer"]
+visible = false
+layout_mode = 2
+theme = ExtResource("1_wkbtn")
+
+[node name="QuizProgressBar" type="ProgressBar" parent="MarginContainer/VBoxContainerQuiz"]
+layout_mode = 2
+theme_override_styles/fill = SubResource("StyleBoxFlat_qaorj")
+
+[node name="QuestionBox" type="Label" parent="MarginContainer/VBoxContainerQuiz"]
+layout_mode = 2
+theme = ExtResource("1_wkbtn")
+text = "あ
+"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="InputBox" type="LineEdit" parent="MarginContainer/VBoxContainerQuiz"]
+layout_mode = 2
+theme = ExtResource("1_wkbtn")
+placeholder_text = "Input text here"
+expand_to_text_length = true
+script = ExtResource("3_3d503")
+
+[node name="QuizTimer" type="Timer" parent="MarginContainer/VBoxContainerQuiz"]
+one_shot = true
+
+[node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer/VBoxContainerQuiz"]
+layout_mode = 2
+theme_override_constants/separation = 50
+
+[node name="BackButton" type="Button" parent="MarginContainer/VBoxContainerQuiz/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_colors/font_hover_color = Color(0.282353, 0.458824, 0.67451, 1)
+theme_override_colors/font_pressed_color = Color(0.282353, 0.458824, 0.67451, 1)
+theme_override_colors/font_color = Color(0.168627, 0.301961, 0.462745, 1)
+theme_override_font_sizes/font_size = 150
+theme_override_styles/hover = SubResource("StyleBoxFlat_sjks2")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_u5xeg")
+theme_override_styles/normal = SubResource("StyleBoxFlat_kxkpw")
+text = " Back "
+
+[node name="SubmitButton" type="Button" parent="MarginContainer/VBoxContainerQuiz/HBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 150
+theme_override_styles/hover = ExtResource("6_of067")
+theme_override_styles/pressed = ExtResource("3_v8beg")
+theme_override_styles/normal = ExtResource("3_v8beg")
+text = " Submit "
+script = ExtResource("5_xq74t")
+
+[node name="VBoxContainerStart" type="VBoxContainer" parent="MarginContainer"]
+layout_mode = 2
+
+[node name="ScrollContainer" type="ScrollContainer" parent="MarginContainer/VBoxContainerStart"]
+clip_contents = false
+layout_mode = 2
+size_flags_vertical = 3
+horizontal_scroll_mode = 0
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer/VBoxContainerStart/ScrollContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="Title" type="Button" parent="MarginContainer/VBoxContainerStart/ScrollContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+theme = ExtResource("5_k57a6")
+theme_override_colors/font_hover_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
+theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/font_focus_color = Color(0, 0, 0, 1)
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_styles/focus = ExtResource("6_4b03e")
+theme_override_styles/hover_pressed = ExtResource("6_4b03e")
+theme_override_styles/hover = SubResource("StyleBoxFlat_6ttua")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_mciwh")
+theme_override_styles/normal = ExtResource("6_4b03e")
+text = " Hiragana quiz "
+
+[node name="HiraToEngBox" type="HBoxContainer" parent="MarginContainer/VBoxContainerStart/ScrollContainer/VBoxContainer"]
+layout_mode = 2
+alignment = 1
+
+[node name="HiraToEngLabel" type="Label" parent="MarginContainer/VBoxContainerStart/ScrollContainer/VBoxContainer/HiraToEngBox"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme = ExtResource("1_wkbtn")
+theme_override_font_sizes/font_size = 80
+text = "Hiragana to English"
+horizontal_alignment = 1
+
+[node name="HiraToEngButton" type="CheckButton" parent="MarginContainer/VBoxContainerStart/ScrollContainer/VBoxContainer/HiraToEngBox"]
+layout_mode = 2
+theme_override_styles/focus = SubResource("StyleBoxEmpty_7w31y")
+theme_override_icons/checked = ExtResource("3_gmngo")
+theme_override_icons/unchecked = ExtResource("4_bwvyk")
+
+[node name="QuizLengthBox" type="HBoxContainer" parent="MarginContainer/VBoxContainerStart/ScrollContainer/VBoxContainer"]
+layout_mode = 2
+alignment = 1
+
+[node name="QuizLengthLabel" type="Label" parent="MarginContainer/VBoxContainerStart/ScrollContainer/VBoxContainer/QuizLengthBox"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_stretch_ratio = 3.11
+theme = ExtResource("1_wkbtn")
+theme_override_font_sizes/font_size = 80
+text = "Total quiz length:  "
+horizontal_alignment = 1
+
+[node name="QuizLengthField" type="SpinBox" parent="MarginContainer/VBoxContainerStart/ScrollContainer/VBoxContainer/QuizLengthBox"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme = ExtResource("1_wkbtn")
+value = 10.0
+
+[node name="KanaTableContainer" type="GridContainer" parent="MarginContainer/VBoxContainerStart/ScrollContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 0
+theme = ExtResource("7_6chpx")
+columns = 5
+
+[node name="MixedModeBox" type="HBoxContainer" parent="MarginContainer/VBoxContainerStart/ScrollContainer/VBoxContainer"]
+layout_mode = 2
+alignment = 1
+
+[node name="MixedModeLabel" type="Label" parent="MarginContainer/VBoxContainerStart/ScrollContainer/VBoxContainer/MixedModeBox"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme = ExtResource("1_wkbtn")
+theme_override_font_sizes/font_size = 80
+text = "Mixed Kata&Hirakana"
+horizontal_alignment = 1
+
+[node name="MixedModeButton" type="CheckButton" parent="MarginContainer/VBoxContainerStart/ScrollContainer/VBoxContainer/MixedModeBox"]
+layout_mode = 2
+theme_override_colors/icon_disabled_color = Color(0.310617, 0.310617, 0.310617, 1)
+theme_override_styles/focus = SubResource("StyleBoxEmpty_7w31y")
+theme_override_icons/checked = ExtResource("3_gmngo")
+theme_override_icons/unchecked = ExtResource("4_bwvyk")
+theme_override_icons/checked_disabled = ExtResource("12_1ga28")
+theme_override_icons/unchecked_disabled = ExtResource("13_gpcft")
+
+[node name="StartButton" type="Button" parent="MarginContainer/VBoxContainerStart"]
+z_index = 2
+layout_mode = 2
+size_flags_horizontal = 4
+theme = ExtResource("1_wkbtn")
+theme_override_font_sizes/font_size = 200
+theme_override_styles/hover = ExtResource("6_of067")
+theme_override_styles/pressed = ExtResource("3_v8beg")
+theme_override_styles/normal = ExtResource("3_v8beg")
+text = " Start "
+
+[node name="GridContainer" type="GridContainer" parent="MarginContainer/VBoxContainerStart"]
+visible = false
+layout_mode = 2
+size_flags_vertical = 3
+columns = 2
+
+[node name="Button3" type="Button" parent="MarginContainer/VBoxContainerStart/GridContainer"]
+clip_contents = true
+layout_mode = 2
+size_flags_vertical = 3
+size_flags_stretch_ratio = 5.6
+theme_override_font_sizes/font_size = 100
+text = "A"
+
+[node name="Button4" type="Button" parent="MarginContainer/VBoxContainerStart/GridContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+size_flags_stretch_ratio = 4.0
+text = "A"
+
+[node name="Button5" type="Button" parent="MarginContainer/VBoxContainerStart/GridContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+text = "A"
+
+[node name="Button6" type="Button" parent="MarginContainer/VBoxContainerStart/GridContainer"]
+clip_contents = true
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+text = "A"
+
+[connection signal="text_submitted" from="MarginContainer/VBoxContainerQuiz/InputBox" to="." method="inputbox_text_submitted"]
+[connection signal="pressed" from="MarginContainer/VBoxContainerQuiz/HBoxContainer/BackButton" to="." method="_on_back_button_pressed"]
+[connection signal="pressed" from="MarginContainer/VBoxContainerQuiz/HBoxContainer/SubmitButton" to="." method="_on_submit_button_pressed"]
+[connection signal="pressed" from="MarginContainer/VBoxContainerStart/ScrollContainer/VBoxContainer/Title" to="." method="_on_title_pressed"]
+[connection signal="toggled" from="MarginContainer/VBoxContainerStart/ScrollContainer/VBoxContainer/HiraToEngBox/HiraToEngButton" to="." method="_on_kana_to_eng_button_toggled"]
+[connection signal="focus_exited" from="MarginContainer/VBoxContainerStart/ScrollContainer/VBoxContainer/QuizLengthBox/QuizLengthField" to="." method="_on_quiz_length_field_focus_exited"]
+[connection signal="toggled" from="MarginContainer/VBoxContainerStart/ScrollContainer/VBoxContainer/MixedModeBox/MixedModeButton" to="." method="_on_mixed_mode_button_toggled"]
+[connection signal="pressed" from="MarginContainer/VBoxContainerStart/StartButton" to="." method="_on_start_button_pressed"]
